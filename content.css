@@ -1,0 +1,4 @@
+/* Hide YouTube chat panel */
+.byt--nochat ytd-live-chat-frame {
+	display: none;
+}

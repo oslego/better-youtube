@@ -1,0 +1,39 @@
+{
+	"name": "Better YouTube",
+	"version": "1.0",
+	"description": "Hide things on YouTube that are not important to you.",
+	"manifest_version": 2,
+	"options_ui": {
+    "page": "options.html",
+    "open_in_tab": false,
+		"chrome_style": true
+  },
+	"browser_action": {
+		"browser_style": true,
+    "default_popup": "options.html"
+  },
+	"permissions": [
+    "storage"
+  ],
+	"web_accessible_resources": [
+    "options.js",
+    "prefs.js"
+  ],
+	"content_scripts": [
+		{
+			"run_at": "document_start",
+			"matches": [
+				"https://youtube.com/*",
+				"https://www.youtube.com/*"
+			],
+			"css": [
+				"content.css"
+			],
+			"js": [
+        "utils.js",
+        "prefs.js",
+				"content.js"
+			]
+		}
+	]
+}
